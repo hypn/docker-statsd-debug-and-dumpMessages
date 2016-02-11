@@ -1,13 +1,7 @@
 # Usage
 
-This docker fronts the visity/carbon docker and adds statsd functionality. 
+This docker runs statsd with debug and dumpMessages enabled.
 
-Example, first start the carbon docker (see also visity/carbon):
+To start this container:
 
-	docker run -d -v $PWD/whisper/:/opt/graphite/storage/whisper/ --name carbon visity/carbon
-	
-Then start the statds docker and expose the statsd collect port over udp:
-
-	docker run -d --name statsd --link carbon -p 8125:8125/udp visity/statsd
-
-Note: The name 'carbon' is used in the statsd config, so is required to be exact.
+    docker run -p 8125:8125/udp statsd_dumpmessages

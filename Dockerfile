@@ -1,4 +1,4 @@
-FROM      node:0.10
+FROM      mhart/alpine-node
 
 RUN       npm install -g statsd@0.7.2
 
